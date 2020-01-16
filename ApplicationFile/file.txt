@@ -1,0 +1,3 @@
+This is testing write file with append
+This is testing write file 1
+This is testing write file 2
