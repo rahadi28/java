@@ -1,4 +1,4 @@
-package com.enigmacamp.rahadi;
+package com.enigmacamp;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
