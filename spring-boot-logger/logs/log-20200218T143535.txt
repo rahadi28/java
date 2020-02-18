@@ -1,0 +1,7 @@
+com.enigmacamp.Application - Starting Application on rahadi-Lenovo-V330-14IKB with PID 24021 (/home/rahadi/Git/github/jav/spring-boot-logger/target/classes started by rahadi in /home/rahadi/Git/github/jav/spring-boot-logger)
+com.enigmacamp.Application - No active profile set, falling back to default profiles: default
+com.enigmacamp.Application - Started Application in 1.056 seconds (JVM running for 1.238)
+com.enigmacamp.Application - This is an info message
+com.enigmacamp.Application - This is a warn message
+com.enigmacamp.Application - This is an error message
+c.e.service.CalculatorService - java.lang.ArithmeticException: / by zero
