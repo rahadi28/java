@@ -1,7 +1,0 @@
-18-02-2020 15:05:54.057 [35m[main][0;39m [34mINFO [0;39m com.enigmacamp.Application.logStarting - Starting Application on rahadi-Lenovo-V330-14IKB with PID 7402 (/home/rahadi/Git/github/jav/spring-boot-logger/target/classes started by rahadi in /home/rahadi/Git/github/jav/spring-boot-logger)
-18-02-2020 15:05:54.059 [35m[main][0;39m [34mINFO [0;39m com.enigmacamp.Application.logStartupProfileInfo - No active profile set, falling back to default profiles: default
-18-02-2020 15:05:54.842 [35m[main][0;39m [34mINFO [0;39m com.enigmacamp.Application.logStarted - Started Application in 1.055 seconds (JVM running for 1.262)
-18-02-2020 15:05:54.843 [35m[main][0;39m [34mINFO [0;39m com.enigmacamp.Application.run - This is an info message
-18-02-2020 15:05:54.843 [35m[main][0;39m [31mWARN [0;39m com.enigmacamp.Application.run - This is a warn message
-18-02-2020 15:05:54.843 [35m[main][0;39m [1;31mERROR[0;39m com.enigmacamp.Application.run - This is an error message
-18-02-2020 15:05:54.844 [35m[main][0;39m [1;31mERROR[0;39m c.e.service.CalculatorService.division - java.lang.ArithmeticException: / by zero
