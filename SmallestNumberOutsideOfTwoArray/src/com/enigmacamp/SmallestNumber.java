@@ -46,8 +46,8 @@ public class SmallestNumber {
 	}
 
 	public static void main(String[] args) {
-		int[] arrOne = { 1, 4, 3, 2 };
-		int[] arrTwo = { 7, 5, 2, 3, 1, 4 };
+		int[] arrOne = { 1, 4, 3, 2, 4, 3, 7 };
+		int[] arrTwo = { 4, 3, 2, 4, 3, 7, 9 };
 
 		arraySorting(arrOne);
 		arraySorting(arrTwo);
