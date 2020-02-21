@@ -1,5 +1,6 @@
 package com.enigmacamp;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class PrimeNumber {
@@ -9,7 +10,7 @@ public class PrimeNumber {
 		Scanner scan = new Scanner(System.in);
 		int input = scan.nextInt();
 		
-		for (int i = 1; i <= input; i++) {
+		for (int i = input; i >= 1; i--) {
 			int counter = 0;
 			
 			if (i == 1) {
