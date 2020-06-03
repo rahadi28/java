@@ -24,9 +24,7 @@ public class Main {
 		try {
 			Class.forName(JDBC_DRIVER);
 			conn = DriverManager.getConnection(DB_URL, USER, PASS);
-			state = conn.createStatement();
-
-			String sqlInsert = "INSERT INTO hero (name, hp, damage) VALUES (?, ?, ?)";
+			
 			BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 			System.out.print("Input hero's name : ");
 			String name = reader.readLine();
@@ -34,7 +32,8 @@ public class Main {
 			String hp = reader.readLine();
 			System.out.print("Input hero's damage : ");
 			String damage = reader.readLine();
-
+			
+			String sqlInsert = "INSERT INTO hero (name, hp, damage) VALUES (?, ?, ?)";
 			ps = conn.prepareStatement(sqlInsert);
 			ps.setString(1, name);
 			ps.setString(2, hp);
@@ -55,21 +54,20 @@ public class Main {
 		try {
 			Class.forName(JDBC_DRIVER);
 			conn = DriverManager.getConnection(DB_URL, USER, PASS);
-			state = conn.createStatement();
 
-			String sqlUpdate = "UPDATE hero SET name = ?, hp = ?, damage = ? WHERE id = ?";
 			BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 			System.out.print("Input hero's id : ");
 			String id = reader.readLine();
 			System.out.print("Input hero's name : ");
-			String nama = reader.readLine();
+			String name= reader.readLine();
 			System.out.print("Input hero's hp : ");
 			String hp = reader.readLine();
 			System.out.print("Input hero's damage : ");
 			String damage = reader.readLine();
 
+			String sqlUpdate = "UPDATE hero SET name = ?, hp = ?, damage = ? WHERE id = ?";
 			ps = conn.prepareStatement(sqlUpdate);
-			ps.setString(1, nama);
+			ps.setString(1, name);
 			ps.setString(2, hp);
 			ps.setString(3, damage);
 			ps.setString(4, id);
@@ -92,8 +90,8 @@ public class Main {
 			state = conn.createStatement();
 
 			String sqlSelect = "SELECT * FROM hero";
-
 			rs = state.executeQuery(sqlSelect);
+			
 			while (rs.next()) {
 				System.out.println("+--------------------------------+");
 				System.out.println("Id\t: " + rs.getInt("id"));
@@ -111,16 +109,16 @@ public class Main {
 		try {
 			Class.forName(JDBC_DRIVER);
 			conn = DriverManager.getConnection(DB_URL, USER, PASS);
-			state = conn.createStatement();
 
-			String sqlSelect = "SELECT * FROM hero WHERE name LIKE ? ";
 			BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 			System.out.print("Input hero's name : ");
-			String nama = reader.readLine();
+			String name= reader.readLine();
 
+			String sqlSelect = "SELECT * FROM hero WHERE name LIKE ? ";
 			ps = conn.prepareStatement(sqlSelect);
-			ps.setString(1, nama);
+			ps.setString(1, name);
 			rs = ps.executeQuery();
+			
 			while (rs.next()) {
 				System.out.println("+--------------------------------+");
 				System.out.println("ID\t: " + rs.getInt("id"));
@@ -138,13 +136,12 @@ public class Main {
 		try {
 			Class.forName(JDBC_DRIVER);
 			conn = DriverManager.getConnection(DB_URL, USER, PASS);
-			state = conn.createStatement();
 
-			String sqlDelete = "DELETE FROM hero WHERE id = ?";
 			BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 			System.out.print("Input hero's id : ");
 			String id = reader.readLine();
 
+			String sqlDelete = "DELETE FROM hero WHERE id = ?";
 			ps = conn.prepareStatement(sqlDelete);
 			ps.setString(1, id);
 			int rowsAffected = ps.executeUpdate();
@@ -157,10 +154,6 @@ public class Main {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
-
-	static void exit() {
-
 	}
 
 	public int printMenuAndGetInput() {
