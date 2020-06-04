@@ -1,0 +1,59 @@
+package com.enigmacamp.service;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import com.enigmacamp.config.DatabaseConnection;
+import com.enigmacamp.model.User;
+
+public class UserService {
+	public static List<User> getUsersByGender(boolean gender) {
+		List<User> userList = new ArrayList<User>();
+
+		try {
+			Connection conn = DatabaseConnection.getConnection();
+			String sql = "SELECT id, name, email, phone_number, gender FROM users WHERE gender=?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setBoolean(1, gender);
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
+				User user = new User(rs.getInt("id"), rs.getString("name"), rs.getString("email"),
+						rs.getString("phone_number"), rs.getBoolean("gender"));
+				userList.add(user);
+			}
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return userList;
+	}
+
+	public static User getUserById(int id) {
+		User user = null;
+
+		try {
+			Connection conn = DatabaseConnection.getConnection();
+			String sql = "SELECT id, name, email, phone_number, gender FROM users WHERE id=?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+
+			if (rs.next()) {
+				user = new User(rs.getInt("id"), rs.getString("name"), rs.getString("email"),
+						rs.getString("phone_number"), rs.getBoolean("gender"));
+			}
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return user;
+	}
+}
