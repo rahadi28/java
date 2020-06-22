@@ -2,7 +2,6 @@ package com.enigmacamp;
 
 import java.util.List;
 import java.util.Scanner;
-
 import com.enigmacamp.model.User;
 import com.enigmacamp.service.UserService;
 
