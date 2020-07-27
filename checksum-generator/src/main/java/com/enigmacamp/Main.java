@@ -61,8 +61,8 @@ public class Main {
 	private String readFile(File file) throws IOException {
 		if (file == null)
 			return null;
-
-		JSONParser parser = new JSONParser();
+		
+		JSONParser parser = new JSONParser();		
 		String str = null;
 
 		try (Reader reader = new FileReader(file)) {
@@ -76,6 +76,8 @@ public class Main {
 
 		return str;
 	}
+	
+	
 
 	private String generatePayload() {
 		String str = null;
@@ -84,7 +86,13 @@ public class Main {
 		obj.put("username", "NGztUshX6XxIktmeQX8Fsg==");
 		obj.put("password", "huHCRs1CKZlIl1SY7iT/kYXzCt670ETWSncmH6lyByppKMbkC+9iFkDs8imIbNV9UD0rDxuD08hVkVa+3wBvfjpUEhW55ghd9ZUCoxiwYL2sN6hch088NTBl5mE2DVtq0q4P+79bA91B8GAhnnxpWe9ZjkmJjEjQ29Xq+z88OpMGdR7Sb/BWCkjBqHk5obZN22IuJ56WZTmzDms76wr+eu1cU8D7Ra7BYQwUaApxAU2XYph0XaY6WO4FlTG4fJwqqKVnGgd99aSwHORhW90SL7DAVNn2DFAdpPwcim3GcGDti3+edA5QWkPD7v8YN5nWD8426neUwEq+vk4gPrna4g==");
 		obj.put("deviceToken", null);
-
+		
+//		HashMap<String, String> obj = new HashMap<>();
+//		obj.put("deviceId", "aa213d4b0a976d6c");
+//		obj.put("username", "NGztUshX6XxIktmeQX8Fsg==");
+//		obj.put("password", "huHCRs1CKZlIl1SY7iT/kYXzCt670ETWSncmH6lyByppKMbkC+9iFkDs8imIbNV9UD0rDxuD08hVkVa+3wBvfjpUEhW55ghd9ZUCoxiwYL2sN6hch088NTBl5mE2DVtq0q4P+79bA91B8GAhnnxpWe9ZjkmJjEjQ29Xq+z88OpMGdR7Sb/BWCkjBqHk5obZN22IuJ56WZTmzDms76wr+eu1cU8D7Ra7BYQwUaApxAU2XYph0XaY6WO4FlTG4fJwqqKVnGgd99aSwHORhW90SL7DAVNn2DFAdpPwcim3GcGDti3+edA5QWkPD7v8YN5nWD8426neUwEq+vk4gPrna4g==");
+//		obj.put("deviceToken", null);
+		
 		str = obj.toString();
 
 		return str;
